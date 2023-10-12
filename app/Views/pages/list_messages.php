@@ -1,9 +1,6 @@
-<?= $this->extend('layout') ?>
+<?= $this->extend('layout_hf') ?>
 
-<?= $this->section('contenu') ?>
-
-
-
+<?= $this->section('content') ?>
 
 
 <p>Liste des messages</p>
