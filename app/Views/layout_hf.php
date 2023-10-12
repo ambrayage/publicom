@@ -12,13 +12,24 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/sign-in.css" rel="stylesheet">
     <link href="assets/css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/header.css">
 
 </head>
 
 <body>
     <header class="p-3 text-bg-dark">
-        <div class="container">
+        <div class="container-fluid">
+            <?= helper('html'); ?>
+            <?php
+            $imageProperties = [
+                'src' => 'images/logo_publicom.png',
+                'alt' => 'logo',
+                'class' => 'post_images',
+                'width' => '50',
+                'height' => '50',
+            ]; ?>
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <?= img($imageProperties); ?>
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
                         <use xlink:href="#bootstrap" />
