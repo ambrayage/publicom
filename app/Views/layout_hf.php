@@ -37,9 +37,10 @@
                 </a>
 
                 <ul class="mb-3 nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    
 
-                    <li><a href=""><button type="button" class="rounded-start btn btn-outline-success me-lg-3 ">Visualiser messages</button></a></li>
+                    <div class="rounded-start">
+                        <li><a href=""><button type="button" class="rounded-start btn btn-outline-success me-lg-3 ">Visualiser messages</button></a></li>
+                    </div>
                     <li><a href="<?= route_to('liste.message') ?>"><button type="button" class="btn btn-outline-warning me-lg-3">Liste des messages d'information</button></a></li>
                     <li><a href="<?= route_to('page.creation') ?>"><button type="button" class="btn btn-outline-danger me-lg-3">Créer un message</button></a></li>
                 </ul>
