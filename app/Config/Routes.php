@@ -18,7 +18,7 @@ $routes->post('/ajouter-utilisateur', 'UtilisateurController::ajouterUtilisateur
 
 $routes->get('/visu', 'VisuMessageController::view', ['filter' => 'authGuard', 'as' => 'visualisation.message']);
 
-$routes->get('/liste', 'MessageController::liste', ['filter' => 'authGuard', 'as' => 'liste.message']);
+$routes->get('/liste', 'MessageController::liste', ['as' => 'liste.message']);
 $routes->post('/supprimer-message', 'MessageController::supprimerMessage', ['as' => 'supprimer.message']);
 
 $routes->get('/modifier-message', 'MessageController::modifierMessage', ['filter' => 'authGuard', 'as' => 'page.modifier']);
