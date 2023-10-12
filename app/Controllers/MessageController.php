@@ -6,10 +6,13 @@ class MessageController extends BaseController
 {
     public function creationMessage()
     {
-        return view('pages/create_messages');
-      
+        return view('pages/create_messages', [
+            "title" => "Ajouter un message"
+        ]);
+
     }
-    public function liste(){
+    public function liste()
+    {
         return view('pages/list_messages', [
             "title" => "Liste des messages"
         ]);
