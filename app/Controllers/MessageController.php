@@ -10,7 +10,9 @@ class MessageController extends BaseController
       
     }
     public function liste(){
-        return view('pages/list_messages');
+        return view('pages/list_messages', [
+            "title" => "Liste des messages"
+        ]);
     }
 
 }
