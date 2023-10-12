@@ -7,3 +7,6 @@ $this->section('content');
 ?>
 
 <h1>Ajouter Message</h1>
+
+
+<?= $this->endSection();
