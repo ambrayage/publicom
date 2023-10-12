@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <header class="p-3 text-bg-dark">
+    <header class="p-3 text-bg-dark input-group">
         <div class="container-fluid">
             <?= helper('html'); ?>
             <?php
@@ -36,12 +36,12 @@
                     </svg>
                 </a>
 
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <ul class="mb-3 nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     
 
-                    <li><button type="button" class="btn btn-outline-success">Visualiser messages</button></li>
-                    <li><button type="button" class="btn btn-outline-warning">Liste des messages d'information</button></li>
-                    <li><button type="button" class="btn btn-outline-danger">Créer un message</button></li>
+                    <li><button type="button" class="btn btn-outline-success me-lg-3">Visualiser messages</button></li>
+                    <li><button type="button" class="btn btn-outline-warning me-lg-3">Liste des messages d'information</button></li>
+                    <li><button type="button" class="btn btn-outline-danger me-lg-3">Créer un message</button></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
