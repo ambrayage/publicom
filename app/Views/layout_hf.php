@@ -49,7 +49,9 @@
                 </form>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-primary">Déconnexion</button>
+                    <form action="<?= url_to('deconnexion') ?>">
+                    <button type="submit" class="btn btn-primary">Déconnexion</button>
+                    </form>
                 </div>
             </div>
         </div>

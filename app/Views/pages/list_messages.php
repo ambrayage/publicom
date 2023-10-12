@@ -3,69 +3,50 @@
 <?= $this->section('content') ?>
 
 
-<center><h1>Liste des messages</h1></center>
+<div class="my-4 text-center">
+    <h1>Liste des messages</h1>
+</div>
 
-<table class="table">
+<div class="container">
+<div class="mb-4">
+    <button type="submit" class="btn btn-primary">Supprimer des messages</button>
+</div>
+<table class=" table text-center">
     <thead>
         <tr>
-            <th scope="col">N°</th>
+            <th scope="col">Supprimer</th>
             <th scope="col">Titre</th>
             <th scope="col">Message</th>
             <th scope="col">Date</th>
             <th scope="col">Statut</th>
             <th scope="col">Créateur</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Historique</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th scope="row">1</th>
+            <th scope="row"><input type="checkbox"></th>
             <td>Test</td>
             <td>Message test</td>
             <td>13/12/1312</td>
             <td>En ligne</td>
             <td>Test</td>
+            <td><a href="">Modifier</a></td>
+            <td><a href="">Historique</a></td>
         </tr>
         <tr>
-            <th scope="row">2</th>
+            <th scope="row"><input type="checkbox"></th>
             <td>Test</td>
             <td>Message test</td>
             <td>13/12/1312</td>
             <td>En ligne</td>
             <td>Test</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Test</td>
-            <td>Message test</td>
-            <td>13/12/1312</td>
-            <td>En ligne</td>
-            <td>Test</td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>Test</td>
-            <td>Message test</td>
-            <td>13/12/1312</td>
-            <td>En ligne</td>
-            <td>Test</td>
-        </tr>
-        <tr>
-            <th scope="row">5</th>
-            <td>Test</td>
-            <td>Message test</td>
-            <td>13/12/1312</td>
-            <td>En ligne</td>
-            <td>Test</td>
-        </tr>
-        <tr>
-            <th scope="row">6</th>
-            <td>Test</td>
-            <td>Message test</td>
-            <td>13/12/1312</td>
-            <td>En ligne</td>
-            <td>Test</td>
+            <td><a href="">Modifier</a></td>
+            <td><a href="">Historique</a></td>
         </tr>
     </tbody>
 </table>
+</div>
 
 <?= $this->endSection() ?>
