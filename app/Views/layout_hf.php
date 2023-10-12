@@ -37,9 +37,11 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-white">Visualiser messages</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Liste des messages d'information</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Créer un message</a></li>
+                    
+
+                    <li><button type="button" class="btn btn-outline-success">Visualiser messages</button></li>
+                    <li><button type="button" class="btn btn-outline-warning">Liste des messages d'information</button></li>
+                    <li><button type="button" class="btn btn-outline-danger">Créer un message</button></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -47,7 +49,7 @@
                 </form>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-warning">Déconnexion</button>
+                    <button type="button" class="btn btn-primary">Déconnexion</button>
                 </div>
             </div>
         </div>
