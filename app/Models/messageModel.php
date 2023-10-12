@@ -1,0 +1,15 @@
+<?php namespace App\Models;
+use CodeIgniter\Database\ConnectionInterface;
+use CodeIgniter\Model;
+
+class messageModel extends Model
+{
+    protected $table      = 'publication';
+    protected $primaryKey = 'IDMESSAGE';
+
+    protected $returnType     = 'array'; // 'object'
+    protected $useSoftDeletes = false; // true => delete_at ...
+
+    protected $allowedFields = ['IDMESSAGE','IDUTILISATEUR', 'TITREMESSAGE','TEXTEMESSAGE', 'DATEHEUREMESSAGE', 'STATUTMESSAGE', 'CREATEURMESSAGE'];
+
+}

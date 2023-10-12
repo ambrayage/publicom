@@ -8,6 +8,9 @@ use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Filters\FilterInterface;
 
 class Filters extends BaseConfig
 {
@@ -18,13 +21,22 @@ class Filters extends BaseConfig
      * @var array<string, string>
      * @phpstan-var array<string, class-string>
      */
+    // public array $aliases = [
+    //     'csrf'          => CSRF::class,
+    //     'toolbar'       => DebugToolbar::class,
+    //     'honeypot'      => Honeypot::class,
+    //     'invalidchars'  => InvalidChars::class,
+    //     'secureheaders' => SecureHeaders::class,
+    // ];
+
     public array $aliases = [
         'csrf'          => CSRF::class,
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
-        'invalidchars'  => InvalidChars::class,
-        'secureheaders' => SecureHeaders::class,
+        'authGuard'     => \app\Filters\AuthGuard::class,
+        
     ];
+    
 
     /**
      * List of filter aliases that are always
