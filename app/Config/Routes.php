@@ -13,7 +13,7 @@ $routes->post('/connexion', 'LoginController::signIn', ['as' => 'connexion']);
 $routes->get('/deconnexion', 'LoginController::signOut', ['as' => 'deconnexion']);
 
 
-$routes->get('/ajout-utilisateur', 'UtilisateurController::view', ['filter' => 'authGuard', 'as' => 'ajout.utilisateur'] );
+$routes->get('/ajout-utilisateur', 'UtilisateurController::view', ['as' => 'ajout.utilisateur'] );
 $routes->post('/ajouter-utilisateur', 'UtilisateurController::ajouterUtilisateur', ['as' => 'ajouter.utilisateur']);
 
 $routes->get('/visu', 'VisuMessageController::view', ['filter' => 'authGuard', 'as' => 'visualisation.message']);
