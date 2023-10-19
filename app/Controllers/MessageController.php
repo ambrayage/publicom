@@ -18,4 +18,11 @@ class MessageController extends BaseController
         ]);
     }
 
+    public function modifierMessage()
+    {
+        return view('pages/edit_messages', [
+            'title'=> 'Modifier un message'
+            ]);
+    }
+
 }
