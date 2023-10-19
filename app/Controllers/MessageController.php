@@ -101,7 +101,7 @@ class MessageController extends BaseController
             'STATUTMESSAGE' => $statut
         ];
 
-        $modelModifierMessage->update($data);
+        $modelModifierMessage->where('IDMESSAGE', $idMessage)->update($data);
 
         return redirect()->to(base_url('liste'));
 
