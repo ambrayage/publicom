@@ -40,3 +40,41 @@ main {
     color: rgb(255, 110, 42);
 }
 
+
+
+#carousel-bouton-gauche {
+    display: none;
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 6%;
+    aspect-ratio: 1/1;
+}
+
+#carousel-bouton-droite {
+    position: absolute;
+    left: 84%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 6%;
+    aspect-ratio: 1/1;
+}
+
+#carousel-bouton-gauche:hover,
+#carousel-bouton-droite:hover {
+    width: 7%;
+}
+
+
+@media screen and (max-width: 800px) {
+    .carousel-item {
+        width: 80%;
+    }
+    #carousel-bouton-droite {
+        left: 94%;
+    }
+    #carousel-bouton-gauche {
+        left: 5%;
+    }
+}
