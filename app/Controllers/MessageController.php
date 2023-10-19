@@ -93,7 +93,6 @@ class MessageController extends BaseController
         }
 
         $data = [
-            'IDMESSAGE' => $idMessage,
             'TITREMESSAGE' => $titreModifier,
             'TEXTEMESSAGE' => $contenuModifier,
             'DATEHEUREMESSAGE' => $dateHeure,
