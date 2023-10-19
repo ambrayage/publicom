@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\messageModel;
+
 class MessageController extends BaseController
 {
     public function creationMessage()
@@ -22,7 +24,7 @@ class MessageController extends BaseController
     {
         return view('pages/edit_messages', [
             'title'=> 'Modifier un message'
-            ]);
+        ]);
     }
 
 }

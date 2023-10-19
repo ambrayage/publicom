@@ -1,13 +1,19 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\messageModel;
 
 class VisuMessageController extends BaseController
 {
     public function view()
     {
-        return  view('pages/visualisation_messages.php', [
-            'title' => 'montitre'
+
+        $messageModel = new messageModel();
+        $dataMessages = $messageModel->findAll();
+      
+        return view('/pages/visualisation_messages', [
+            'listemessage' => $dataMessages,
+            'title' => 'visualtion du message'
         ]);
     }
 }

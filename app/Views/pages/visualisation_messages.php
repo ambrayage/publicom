@@ -3,7 +3,13 @@
 <main>
   <div><p>test</p></div>
   <div class="card">
-    P
+    <?php 
+    
+    foreach ($listemessage as $message) {
+      echo '<p>'.$message['TEXTEMESSAGE'].'</p>';
+    }
+
+    ?>
   </div>
   <div><p>test</p></div>
 </main>
