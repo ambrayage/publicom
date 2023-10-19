@@ -17,7 +17,7 @@ class UtilisateurController extends BaseController
         $prenom = $this->request->getVar('firstName');
         $nom = $this->request->getVar('lastName');
         $password = $this->request->getVar('password');
-        $username = $prenom . '.' . $nom;
+        $username = strtolower($prenom . '.' . $nom);
 
 
         $data = [

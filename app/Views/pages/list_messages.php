@@ -20,7 +20,7 @@
             <th scope="col">Date</th>
             <th scope="col">Statut</th>
             <th scope="col">Créateur</th>
-            <th scope="col">Modifier</th>
+            <th scope="col">Modifier</a></th>
             <th scope="col">Historique</th>
         </tr>
     </thead>
@@ -32,7 +32,7 @@
             <td>13/12/1312</td>
             <td>En ligne</td>
             <td>Test</td>
-            <td><a href="">Modifier</a></td>
+            <td><a href="<?= route_to('page.modifier'); ?>">Modifier</a></td>
             <td><a href="">Historique</a></td>
         </tr>
         <tr>
@@ -48,7 +48,6 @@
     </tbody>
 </table>
 </div>
-
- <?php var_dump($_SESSION['IDUTILISATEUR']);?> 
+ 
 
 <?= $this->endSection() ?>
