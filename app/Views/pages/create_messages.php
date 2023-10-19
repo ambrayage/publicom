@@ -1,6 +1,6 @@
 <?=
 
-    $this->extend('layout_hf');
+$this->extend('layout_hf');
 
 $this->section('content');
 
@@ -10,7 +10,7 @@ $this->section('content');
     <h1 class="display-3">Ajouter Message</h1>
 </div>
 
-<div class="container border">
+<div class="container border rounded">
     <form action="">
     <div class="text-center">
         <div class="input-group mb-3">

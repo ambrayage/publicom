@@ -21,22 +21,14 @@ class Filters extends BaseConfig
      * @var array<string, string>
      * @phpstan-var array<string, class-string>
      */
-    // public array $aliases = [
-    //     'csrf'          => CSRF::class,
-    //     'toolbar'       => DebugToolbar::class,
-    //     'honeypot'      => Honeypot::class,
-    //     'invalidchars'  => InvalidChars::class,
-    //     'secureheaders' => SecureHeaders::class,
-    // ];
-
     public array $aliases = [
-        'csrf'          => CSRF::class,
-        'toolbar'       => DebugToolbar::class,
-        'honeypot'      => Honeypot::class,
-        'authGuard'     => \app\Filters\AuthGuard::class,
-        
+        'csrf' => CSRF::class,
+        'toolbar' => DebugToolbar::class,
+        'honeypot' => Honeypot::class,
+        'invalidchars' => InvalidChars::class,
+        'secureheaders' => SecureHeaders::class,
+        'authGuard' => \App\Filters\AuthGuard::class,
     ];
-    
 
     /**
      * List of filter aliases that are always
