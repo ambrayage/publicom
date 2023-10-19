@@ -20,7 +20,7 @@ foreach ($listeModifierMessage as $modfier) {
 
 
 <div class="container border rounded">
-    <form method="post" action="<?= route_to('modifier.message')?>">
+    <form method="post" action="<?= route_to('modifier.message').'?id='. $_GET['id']?>">
         <div class="text-center">
             <div class="input-group ">
                 <span class="mt-5 input-group-text" id="basic-addon1">Titre</span>

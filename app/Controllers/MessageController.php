@@ -80,9 +80,9 @@ class MessageController extends BaseController
         $dateHeure = date('y-m-d h:i:s');
 
         $session = session();
+        $idutilisateur = $_SESSION['IDUTILISATEUR'];
+
         $idMessage = $_GET['id'];
-
-
         $titreModifier = $this->request->getVar('titre');
         $contenuModifier = $this->request->getVar('contenu');
 
@@ -92,6 +92,16 @@ class MessageController extends BaseController
             $statut = 0;
         }
 
+        $dataHistoriqueMessage = $modelModifierMessage->where('IDMESSAGE', $idMessage)->first();
+
+        $dataHistorique = [
+            'IDMESSAGE' => $idMessage,
+            'IDUTILISATEUR' => $idutilisateur,
+            'HISTORIQUETITREMESSAGE' => $dataHistoriqueMessage['TITREMESSAGE'],
+            'HISTORIQUETEXTEMESSAGE' => $dataHistoriqueMessage['TEXTEMESSAGE'],
+            'HISTORIQUEDATEHEUREMESSAGE' => $dataHistoriqueMessage['DATEHEUREMESSAGE']
+        ];
+
         $data = [
             'TITREMESSAGE' => $titreModifier,
             'TEXTEMESSAGE' => $contenuModifier,
@@ -99,9 +109,32 @@ class MessageController extends BaseController
             'STATUTMESSAGE' => $statut
         ];
 
-        $modelModifierMessage->where('IDMESSAGE', $idMessage)->update($data);
+        $modelModifierMessage->update($idMessage, $data);
+        $modelHistorique->insert($dataHistorique);
 
         return redirect()->to(base_url('liste'));
+
+    }
+
+    public function supprimerMessage()
+    {
+
+        $messagesASupprimer = $this->request->getPost('messages');
+
+        if (!empty($messagesASupprimer)) {
+            $messageModel = new messageModel();
+
+         
+            foreach ($messagesASupprimer as $idMessage) {
+                $messageModel->delete($idMessage);
+            }
+
+          
+            return redirect()->to(base_url('liste'))->with('success', 'Les messages sélectionnés ont été supprimés avec succès.');
+        } else {
+            
+            return redirect()->to(base_url('liste'))->with('error', 'Aucun message sélectionné pour la suppression.');
+        }
 
     }
 
