@@ -45,7 +45,7 @@
                     <li><a href="<?= route_to('liste.message') ?>"><button type="button" class="btn btn-primary me-lg-3">Liste des messages d'information</button></a></li>
                     <li><a href="<?= route_to('page.creation') ?>"><button type="button" class="btn btn-primary me-lg-3">Créer un message</button></a></li>
                 </ul>
-
+                <button class="me-3 btn btn-primary"><?= $_SESSION['IDENTIFIANTUTILISATEUR'] ?></button>
                 <div class="text-end">
                     <form action="<?= url_to('deconnexion') ?>">
                         <button type="submit" class="btn btn-primary">Déconnexion</button>

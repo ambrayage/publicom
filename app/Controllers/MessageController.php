@@ -46,14 +46,22 @@ class MessageController extends BaseController
     }
     public function liste()
     {
+        $modelMessages = new messageModel();
+        $dataMessages = $modelMessages->findAll();
         return view('pages/list_messages', [
+            'listeMessage' => $dataMessages,
             "title" => "Liste des messages"
         ]);
     }
 
     public function modifierMessage()
     {
+        $idMessage = $_GET['id'];
+        $modelModifierMessage = new messageModel();
+        $dataModifierMessages = $modelModifierMessage->where('IDMESSAGE', $idMessage)->findAll();
+    
         return view('pages/edit_messages', [
+            'listeModifierMessage' => $dataModifierMessages,
             'title'=> 'Modifier un message'
         ]);
     }
