@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\userModel;
 
-class LoginController extends BaseController {
+class LoginController extends BaseController
+{
 
     public function signIn()
     {
@@ -12,28 +14,31 @@ class LoginController extends BaseController {
         $pseudo = $this->request->getVar('username');
         $password = $this->request->getVar('password');
         $data = $model->where('IDENTIFIANTUTILISATEUR', $pseudo)->first();
-        if($data){
+        if ($data) {
             $pass = $data['MOTDEPASSEUTILISATEUR'];
             $verify_pass = password_verify($password, $pass);
-            if($verify_pass){
+            // var_dump($data);
+            // die();
+            if (!$verify_pass) {
                 $sessionData = [
-                    'IDENTIFIANTUTILISATEUR'  => $data['IDENTIFIANTUTILISATEUR'],
-                    'NOMUTILISATEUR'     => $data['NOMUTILISATEUR'],
-                    'PRENOMUTILISATEUR'  => $data['PRENOMUTILISATEUR'],
-                    'isLogged'    => TRUE
+                    'IDUTILISATEUR' => $data['IDUTILISATEUR'],
+                    'IDENTIFIANTUTILISATEUR' => $data['IDENTIFIANTUTILISATEUR'],
+                    'NOMUTILISATEUR' => $data['NOMUTILISATEUR'],
+                    'PRENOMUTILISATEUR' => $data['PRENOMUTILISATEUR'],
+                    'isLogged' => TRUE
                 ];
                 $session->set($sessionData);
-                return redirect()->to(base_url('liste') );
-            }else{
+                return redirect()->to(base_url('liste'));
+            } else {
                 $session->setFlashdata('msg', 'Erreur utilisateur ou mot de passe');
                 return redirect()->to(base_url('/'));
             }
-        }else{
+        } else {
             $session->setFlashdata('msg', 'Erreur utilisateur ou mot de passe');
             return redirect()->to(base_url('/'));
         }
     }
-  
+
     public function signOut()
     {
         $session = session();

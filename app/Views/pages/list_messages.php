@@ -49,4 +49,6 @@
 </table>
 </div>
 
+ <?php var_dump($_SESSION['IDUTILISATEUR']);?> 
+
 <?= $this->endSection() ?>
