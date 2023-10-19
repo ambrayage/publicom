@@ -46,10 +46,6 @@
                     <li><a href="<?= route_to('page.creation') ?>"><button type="button" class="btn btn-outline-danger me-lg-3">Créer un message</button></a></li>
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Recherche un message" aria-label="Search">
-                </form>
-
                 <div class="text-end">
                     <form action="<?= url_to('deconnexion') ?>">
                         <button type="submit" class="btn btn-primary">Déconnexion</button>
