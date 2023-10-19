@@ -2,9 +2,6 @@
 
 namespace App\Controllers;
 use App\Models\messageModel;
-
-use App\Models\messageModel;
-
 class MessageController extends BaseController
 {
     public function creationMessage()
