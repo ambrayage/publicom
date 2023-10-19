@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Controllers;
+
+use App\Models\historiqueModel;
 use App\Models\messageModel;
+
 class MessageController extends BaseController
 {
     public function creationMessage()
@@ -12,7 +15,8 @@ class MessageController extends BaseController
 
     }
 
-    public function creation(){
+    public function creation()
+    {
 
         $session = session();
         $messageModel = new messageModel();
@@ -23,7 +27,7 @@ class MessageController extends BaseController
         $idutilisateur = $_SESSION['IDUTILISATEUR'];
         $pseudo = $_SESSION['IDENTIFIANTUTILISATEUR'];
         $dateHeure = date('y-m-d h:i:s');
-        if($statut = $this->request->getVar('statut')){
+        if ($statut = $this->request->getVar('statut')) {
             $statut = 1;
         } else {
             $statut = 0;
@@ -42,7 +46,7 @@ class MessageController extends BaseController
         return redirect()->to(base_url('liste'));
 
 
-        
+
     }
     public function liste()
     {
@@ -59,11 +63,48 @@ class MessageController extends BaseController
         $idMessage = $_GET['id'];
         $modelModifierMessage = new messageModel();
         $dataModifierMessages = $modelModifierMessage->where('IDMESSAGE', $idMessage)->findAll();
-    
+
         return view('pages/edit_messages', [
             'listeModifierMessage' => $dataModifierMessages,
-            'title'=> 'Modifier un message'
+            'title' => 'Modifier un message'
         ]);
+    }
+
+    public function modifier()
+    {
+
+        $modelModifierMessage = new messageModel();
+        $modelHistorique = new historiqueModel();
+
+        date_default_timezone_set('Europe/Paris');
+        $dateHeure = date('y-m-d h:i:s');
+
+        $session = session();
+        $idMessage = $_GET['id'];
+
+
+        $titreModifier = $this->request->getVar('titre');
+        $contenuModifier = $this->request->getVar('contenu');
+
+        if ($statut = $this->request->getVar('statut')) {
+            $statut = 1;
+        } else {
+            $statut = 0;
+        }
+
+        $data = [
+            'IDMESSAGE' => $idMessage,
+            'IDUTILISATEUR' => $_SESSION['IDUTILISATEUR'],
+            'TITREMESSAGE' => $titreModifier,
+            'TEXTEMESSAGE' => $contenuModifier,
+            'DATEHEUREMESSAGE' => $dateHeure,
+            'STATUTMESSAGE' => $statut
+        ];
+
+        $modelModifierMessage->update($data);
+
+        return redirect()->to(base_url('liste'));
+
     }
 
 }

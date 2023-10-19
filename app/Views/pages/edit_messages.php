@@ -20,23 +20,23 @@ foreach ($listeModifierMessage as $modfier) {
 
 
 <div class="container border rounded">
-    <form action="">
+    <form method="post" action="<?= route_to('modifier.message')?>">
         <div class="text-center">
             <div class="input-group ">
                 <span class="mt-5 input-group-text" id="basic-addon1">Titre</span>
                 <input type="text" class="mt-5 form-control" placeholder="Titre du message" aria-label="Username"
-                    aria-describedby="basic-addon1" value="<?= $modfier['TITREMESSAGE']; ?>">
+                    aria-describedby="basic-addon1" name="titre" value="<?= $modfier['TITREMESSAGE']; ?>">
             </div>
         </div>
         <div class="text-center">
             <div class="input-group">
                 <span class="mt-4 input-group-text">Contenu ( 160 caractères max )</span>
-                <textarea class="mt-4 form-control" aria-label="With textarea"
+                <textarea class="mt-4 form-control" aria-label="With textarea" name="contenu"
                     value=""><?= $modfier['TEXTEMESSAGE']; ?></textarea>
             </div>
         </div>
         <div class="form-check  form-switch">
-            <input class="mt-5 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+            <input class="mt-5 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" name="statut"
                 <?= ($modfier['STATUTMESSAGE'] == 1 ? 'checked' : ''); ?>> <label class="mt-5 form-check-label "
                 for="flexSwitchCheckChecked">Afficher ?</label>
         </div>
