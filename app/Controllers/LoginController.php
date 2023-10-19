@@ -17,9 +17,7 @@ class LoginController extends BaseController
         if ($data) {
             $pass = $data['MOTDEPASSEUTILISATEUR'];
             $verify_pass = password_verify($password, $pass);
-            // var_dump($data);
-            // die();
-            if (!$verify_pass) {
+            if ($verify_pass) {
                 $sessionData = [
                     'IDUTILISATEUR' => $data['IDUTILISATEUR'],
                     'IDENTIFIANTUTILISATEUR' => $data['IDENTIFIANTUTILISATEUR'],
