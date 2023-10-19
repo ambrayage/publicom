@@ -1,17 +1,24 @@
 <?= $this->extend('layout_hf') ?>
 <?= $this->section('content') ?>
 <main>
-  <div><p>test</p></div>
+  <div id="carousel-bouton-gauche">
+    <img src="/images/caret-left-square-fill.svg">
+  </div>
+  
   <div class="card">
-    <?php 
-    
+    <?php
+
     foreach ($listemessage as $message) {
-      echo '<p>'.$message['TEXTEMESSAGE'].'</p>';
+      echo '<p>' . $message['TEXTEMESSAGE'] . '</p>';
     }
 
     ?>
+
   </div>
-  <div><p>test</p></div>
+  <div id="carousel-bouton-droite">
+    <img src="/images/caret-right-square-fill.svg">
+  </div>
+
 </main>
 
 
