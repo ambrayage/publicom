@@ -7,26 +7,27 @@
     <h1>Liste des messages</h1>
 </div>
 
-<form method="post" action="<?= route_to('supprimer.message') ?>" >
 
-    <div class="container">
-        <div class="mb-4">
-            <button type="submit" class="btn btn-primary">Supprimer des messages</button>
-        </div>
-        <table class=" table text-center">
-            <thead>
-                <tr>
-                    <th scope="col">Supprimer</th>
-                    <th scope="col">Titre</th>
-                    <th scope="col">Message</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Statut</th>
-                    <th scope="col">Créateur</th>
-                    <th scope="col">Modifier</a></th>
-                    <th scope="col">Historique</th>
-                </tr>
-            </thead>
-            <tbody>
+
+<div class="container">
+    <div class="mb-4">
+        <button type="submit" class="btn btn-primary">Supprimer des messages</button>
+    </div>
+    <table class=" table text-center">
+        <thead>
+            <tr>
+                <th scope="col">Supprimer</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Message</th>
+                <th scope="col">Date</th>
+                <th scope="col">Statut</th>
+                <th scope="col">Créateur</th>
+                <th scope="col">Modifier</a></th>
+                <th scope="col">Historique</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form method="post" action="<?= route_to('supprimer.message') ?>">
                 <?php
 
                 foreach ($listeMessage as $message) {
@@ -37,18 +38,18 @@
                     echo '<td scope="col">' . ($message['STATUTMESSAGE'] == 1 ? "En ligne" : "Hors ligne") . '</td>';
                     echo '<td scope="col">' . $message['CREATEURMESSAGE'] . '</td>';
                     echo '<td scope="col"><a href="' . route_to('page.modifier') . '?id=' . $message['IDMESSAGE'] . '" >Modifier</a></td>';
-                    echo '<td scope="col"><a href="" >Historique</a></td></tr>';
+                    echo '<td scope="col"><a href="' . route_to('historique.message') . '?id=' . $message['IDMESSAGE'] . '" >Historique</a></td></tr>';
 
                 }
 
                 ?>
 
+            </form>
+        </tbody>
+    </table>
+</div>
 
-            </tbody>
-        </table>
-    </div>
 
-</form>
 
 
 <?= $this->endSection() ?>

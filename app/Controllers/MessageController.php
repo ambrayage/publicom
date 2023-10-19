@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\historiqueModel;
 use App\Models\messageModel;
+use App\Models\userModel;
 
 class MessageController extends BaseController
 {
@@ -124,18 +125,38 @@ class MessageController extends BaseController
         if (!empty($messagesASupprimer)) {
             $messageModel = new messageModel();
 
-         
+
             foreach ($messagesASupprimer as $idMessage) {
                 $messageModel->delete($idMessage);
             }
 
-          
+
             return redirect()->to(base_url('liste'))->with('success', 'Les messages sélectionnés ont été supprimés avec succès.');
         } else {
-            
+
             return redirect()->to(base_url('liste'))->with('error', 'Aucun message sélectionné pour la suppression.');
         }
 
+    }
+
+    public function historique()
+    {
+
+        $idMessage = $_GET['id'];
+        $modelUtilisateur = new userModel();
+        $modelHistorique = new historiqueModel;
+        $dataHistoriques = $modelHistorique->where('IDMESSAGE', $idMessage)->findAll();
+        foreach ($dataHistoriques as $dataHistorique) {
+        }
+        $utilisateurHistorique = $modelUtilisateur->where('IDUTILISATEUR', $dataHistorique['IDUTILISATEUR'])->findAll();
+        var_dump($utilisateurHistorique);
+        die();
+
+        return view('pages/historique_edit', [
+            'dataHistorique' => $dataHistoriques,
+            'utilisateurs' => $utilisateurHistorique,
+            'title' => 'Historique des messages'
+        ]);
     }
 
 }
