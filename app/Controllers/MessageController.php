@@ -94,7 +94,6 @@ class MessageController extends BaseController
 
         $data = [
             'IDMESSAGE' => $idMessage,
-            'IDUTILISATEUR' => $_SESSION['IDUTILISATEUR'],
             'TITREMESSAGE' => $titreModifier,
             'TEXTEMESSAGE' => $contenuModifier,
             'DATEHEUREMESSAGE' => $dateHeure,
