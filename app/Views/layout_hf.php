@@ -28,7 +28,15 @@
                 'class' => 'post_images',
                 'width' => '50',
                 'height' => '50',
+            ];
+            $profiles = [
+                'src' => 'images/person-fill.svg',
+                'alt' => 'profile',
+                'class' => 'post_images',
+                'width' => '20',
+                'height' => '20',
             ]; ?>
+
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <?= img($imageProperties); ?>
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -45,7 +53,10 @@
                     <li><a href="<?= route_to('liste.message') ?>"><button type="button" class="btn btn-primary me-lg-3">Liste des messages d'information</button></a></li>
                     <li><a href="<?= route_to('page.creation') ?>"><button type="button" class="btn btn-primary me-lg-3">Créer un message</button></a></li>
                 </ul>
-                <button class="me-3 btn btn-primary"><?= $_SESSION['IDENTIFIANTUTILISATEUR'] ?></button>
+                <button class="me-3 btn btn-primary">
+                    <?= img($profiles); ?>
+                    <?= $_SESSION['IDENTIFIANTUTILISATEUR'] ?>
+                </button>
                 <div class="text-end">
                     <form action="<?= url_to('deconnexion') ?>">
                         <button type="submit" class="btn btn-primary">Déconnexion</button>
