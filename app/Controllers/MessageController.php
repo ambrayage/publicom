@@ -126,8 +126,8 @@ class MessageController extends BaseController
             $messageModel = new messageModel();
 
 
-            foreach ($messagesASupprimer as $idMessage) {
-                $messageModel->delete($idMessage);
+            foreach ($messagesASupprimer as $messagesSuppr) {
+                $messageModel->delete($messagesSuppr);
             }
 
 
