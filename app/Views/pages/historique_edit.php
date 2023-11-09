@@ -25,14 +25,13 @@ $this->section('content');
         </thead>
         <tbody>
             <?php
-         
-         
-            
 
 
 
-
-            
+                echo '<tr><td scope="col">' .  '</td>';
+                echo '<td scope="col">' . '</td>';
+                echo '<td scope="col">' .  '</td>';
+                echo '<td scope="col">' . '</td></tr>';
 
        
 
