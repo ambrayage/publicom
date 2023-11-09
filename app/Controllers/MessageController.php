@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\historiqueModel;
 use App\Models\messageModel;
 use App\Models\userModel;
+use PhpParser\Node\VarLikeIdentifier;
 
 class MessageController extends BaseController
 {
@@ -120,14 +121,14 @@ class MessageController extends BaseController
     public function supprimerMessage()
     {
 
-        $messagesASupprimer = $this->request->getPost('messages');
+        $messagesASupprimer = $this->request->getVar('messages[]');
 
         if (!empty($messagesASupprimer)) {
             $messageModel = new messageModel();
 
 
-            foreach ($messagesASupprimer as $idMessage) {
-                $messageModel->delete($idMessage);
+            foreach ($messagesASupprimer as $messagesSuppr) {
+                $messageModel->delete($messagesSuppr);
             }
 
 
@@ -144,18 +145,15 @@ class MessageController extends BaseController
 
         $idMessage = $_GET['id'];
         $modelUtilisateur = new userModel();
-        $modelHistorique = new historiqueModel;
+        $modelHistorique = new historiqueModel();
         $dataHistoriques = $modelHistorique->where('IDMESSAGE', $idMessage)->findAll();
         foreach ($dataHistoriques as $dataHistorique) {
         }
         $utilisateurHistorique = $modelUtilisateur->where('IDUTILISATEUR', $dataHistorique['IDUTILISATEUR'])->findAll();
         var_dump($utilisateurHistorique);
-        var_dump($dataHistorique);
         die();
 
         return view('pages/historique_edit', [
-            'dataHistorique' => $dataHistoriques,
-            'utilisateurs' => $utilisateurHistorique,
             'title' => 'Historique des messages'
         ]);
     }

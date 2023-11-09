@@ -45,7 +45,7 @@ main {
 #carousel-bouton-gauche {
 
     position: absolute;
-    left: 39%;
+    left: 37.5%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 6%;

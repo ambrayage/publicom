@@ -10,24 +10,25 @@
 
 
 <div class="container">
-    <div class="mb-4">
-        <button type="submit" class="btn btn-primary">Supprimer des messages</button>
-    </div>
-    <table class=" table text-center">
-        <thead>
-            <tr>
-                <th scope="col">Supprimer</th>
-                <th scope="col">Titre</th>
-                <th scope="col">Message</th>
-                <th scope="col">Date</th>
-                <th scope="col">Statut</th>
-                <th scope="col">Créateur</th>
-                <th scope="col">Modifier</a></th>
-                <th scope="col">Historique</th>
-            </tr>
-        </thead>
-        <tbody>
-            <form method="post" action="<?= route_to('supprimer.message') ?>">
+    <form method="post" action="<?= route_to('supprimer.message') ?>">
+        <div class="mb-4">
+            <button type="submit" class="btn btn-primary">Supprimer des messages</button>
+        </div>
+        <table class=" table text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Supprimer</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Statut</th>
+                    <th scope="col">Créateur</th>
+                    <th scope="col">Modifier</a></th>
+                    <th scope="col">Historique</th>
+                </tr>
+            </thead>
+            <tbody>
+
                 <?php
 
                 foreach ($listeMessage as $message) {
@@ -44,8 +45,8 @@
 
                 ?>
 
-            </form>
-        </tbody>
+    </form>
+    </tbody>
     </table>
 </div>
 
