@@ -150,6 +150,7 @@ class MessageController extends BaseController
         }
         $utilisateurHistorique = $modelUtilisateur->where('IDUTILISATEUR', $dataHistorique['IDUTILISATEUR'])->findAll();
         var_dump($utilisateurHistorique);
+        var_dump($dataHistorique);
         die();
 
         return view('pages/historique_edit', [

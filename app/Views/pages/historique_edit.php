@@ -25,8 +25,8 @@ $this->section('content');
         </thead>
         <tbody>
             <?php
-              var_dump($utilisateurs);
-              die();
+            //   var_dump($utilisateurs);
+            //   die();
             foreach ($utilisateurs as $utilisateur) {
               
             }
