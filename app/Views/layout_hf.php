@@ -68,6 +68,8 @@
 
     <?= $this->renderSection('content') ?>
 
+    </body>
+
     <footer class="bg-dark text-white d-flex flex-wrap justify-content-between align-items-center py-3 my-4 mb-0 border-top">
         <p class="col-md-4 mb-0 text-white container">&copy; 2023 Company, Inc</p>
 
@@ -84,7 +86,5 @@
             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">À propos</a></li>
         </ul>
     </footer>
-
-</body>
 
 </html>
