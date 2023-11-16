@@ -162,7 +162,6 @@ class MessageController extends BaseController
         return view('pages/historique_edit', [
             'dataHistorique' => $dataHistoriques,
             'title' => 'Historique des messages',
-            'modifnull' => !empty($dataHistoriques)
         ]);
     }
 
