@@ -28,9 +28,6 @@ $this->section('content');
 
 
 
-
-          
-
                 echo '<tr><td scope="col">' .  '</td>';
                 echo '<td scope="col">' . '</td>';
                 echo '<td scope="col">' .  '</td>';
