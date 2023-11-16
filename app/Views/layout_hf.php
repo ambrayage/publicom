@@ -68,7 +68,7 @@
 
     <?= $this->renderSection('content') ?>
 
-    <footer class="bg-dark text-white d-flex flex-wrap justify-content-between align-items-center py-3 my-4 mb-auto border-top">
+    <footer class="bg-dark text-white d-flex flex-wrap justify-content-between align-items-center py-3 my-4 mb-0 border-top">
         <p class="col-md-4 mb-0 text-white container">&copy; 2023 Company, Inc</p>
 
         <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none container">
