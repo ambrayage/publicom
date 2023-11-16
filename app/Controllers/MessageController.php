@@ -145,11 +145,17 @@ class MessageController extends BaseController
 
         $idMessage = $_GET['id'];
         $modelUtilisateur = new userModel();
-        $modelHistorique = new historiqueModel();
+        $modelHistorique = new historiqueModel;
         $dataHistoriques = $modelHistorique->where('IDMESSAGE', $idMessage)->findAll();
-       
+        foreach ($dataHistoriques as $dataHistorique) {
+        }
+        $utilisateurHistorique = $modelUtilisateur->where('IDUTILISATEUR', $dataHistorique['IDUTILISATEUR'])->findAll();
+        var_dump($utilisateurHistorique);
+        die();
 
         return view('pages/historique_edit', [
+            'dataHistorique' => $dataHistoriques,
+            'utilisateurs' => $utilisateurHistorique,
             'title' => 'Historique des messages'
         ]);
     }
