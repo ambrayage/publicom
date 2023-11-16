@@ -121,7 +121,7 @@ class MessageController extends BaseController
     public function supprimerMessage()
     {
 
-        $messagesASupprimer = $this->request->getPost('messages[]');
+        $messagesASupprimer = $this->request->getPost('message[]');
 
         if (!empty($messagesASupprimer)) {
             $messageModel = new messageModel();

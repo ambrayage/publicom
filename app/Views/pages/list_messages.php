@@ -32,7 +32,7 @@
                 <?php
 
                 foreach ($listeMessage as $message) {
-                    echo '<tr><td scope="row"><input type="checkbox" name="messages[]" value="'.$message['IDMESSAGE'].'"></td>';
+                    echo '<tr><td scope="row"><input type="checkbox" name="message[]" value="'.$message['IDMESSAGE'].'"></td>';
                     echo '<td scope="col">' . $message['TITREMESSAGE'] . '</td>';
                     echo '<td scope="col">' . $message['TEXTEMESSAGE'] . '</td>';
                     echo '<td scope="col">' . $message['DATEHEUREMESSAGE'] . '</td>';
