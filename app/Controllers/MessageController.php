@@ -122,8 +122,6 @@ class MessageController extends BaseController
     {
 
         $messagesASupprimer = $this->request->getPost('messages[]');
-        var_dump($messagesASupprimer);
-        die();
 
         if (!empty($messagesASupprimer)) {
             $messageModel = new messageModel();
