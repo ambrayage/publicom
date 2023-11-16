@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\historiqueModel;
 use App\Models\messageModel;
 use App\Models\userModel;
+use PhpParser\Node\VarLikeIdentifier;
 
 class MessageController extends BaseController
 {
@@ -120,13 +121,10 @@ class MessageController extends BaseController
     public function supprimerMessage()
     {
 
-        $messagesASupprimer = $this->request->getVar('messages[]');
-     
-
         if (!empty($messagesASupprimer)) {
             $messageModel = new messageModel();
 
-
+          
             foreach ($messagesASupprimer as $messagesSuppr) {
                 $messageModel->delete($messagesSuppr);
             }
