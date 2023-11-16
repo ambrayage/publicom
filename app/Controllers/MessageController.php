@@ -46,6 +46,17 @@ class MessageController extends BaseController
         ];
 
         $messageModel->insert($data);
+        $message_id = $messageModel->getInsertID();
+
+        $dataHistorique = [
+            'IDMESSAGE' => $message_id,
+            'IDUTILISATEUR' => $idutilisateur,
+            'HISTORIQUETITREMESSAGE' => $titre,
+            'HISTORIQUETEXTEMESSAGE' => $message,
+            'HISTORIQUEDATEHEUREMESSAGE' => $dateHeure
+        ];
+
+        $historiqModel->insert($dataHistorique);
         return redirect()->to(base_url('liste'));
 
 
