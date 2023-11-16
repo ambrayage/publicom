@@ -22,6 +22,7 @@ class MessageController extends BaseController
 
         $session = session();
         $messageModel = new messageModel();
+        $historiqModel = new historiqueModel();
         date_default_timezone_set('Europe/Paris');
 
         $titre = $this->request->getVar('titre');
@@ -147,6 +148,7 @@ class MessageController extends BaseController
         $modelUtilisateur = new userModel();
         $modelHistorique = new historiqueModel;
         $dataHistoriques = $modelHistorique->where('IDMESSAGE', $idMessage)->findAll();
+      
 
         return view('pages/historique_edit', [
             'dataHistorique' => $dataHistoriques,
