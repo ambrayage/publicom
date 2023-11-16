@@ -121,12 +121,14 @@ class MessageController extends BaseController
     public function supprimerMessage()
     {
 
-        $messagesASupprimer = $this->request->getVar('messages[]');
+        $messagesASupprimer = $this->request->getPost('messages[]');
+        var_dump($messagesASupprimer);
+        die();
 
         if (!empty($messagesASupprimer)) {
             $messageModel = new messageModel();
 
-
+          
             foreach ($messagesASupprimer as $messagesSuppr) {
                 $messageModel->delete($messagesSuppr);
             }
@@ -146,8 +148,8 @@ class MessageController extends BaseController
         $idMessage = $_GET['id'];
         $modelUtilisateur = new userModel();
         $modelHistorique = new historiqueModel();
-        $dataHistoriques = $modelHistorique->where('IDMESSAGE', $idMessage)->findAll();
-
+        $dataHistoriques = $modelHistorique->where('IDMESSAGE', $idMessage);
+        var_dump($dataHistoriques);
 
 
         return view('pages/historique_edit', [
