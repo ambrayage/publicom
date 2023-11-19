@@ -9,7 +9,7 @@ class VisuMessageController extends BaseController
     {
 
         $messageModel = new messageModel();
-        $dataMessages = $messageModel->findAll();
+        $dataMessages = $messageModel->where('STATUTMESSAGE', 1)->findAll();
       
         return view('/pages/visualisation_messages', [
             'listemessage' => $dataMessages,
