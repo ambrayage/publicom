@@ -47,7 +47,7 @@
                         <td scope="row"><input type="checkbox" name="message[]" value="'.$message['IDMESSAGE'].'"></td>';
                         echo '<td scope="col">' . $message['TITREMESSAGE'] . '</td>';
                         echo '<td scope="col">' . $message['TEXTEMESSAGE'] . '</td>';
-                        echo '<td scope="col"><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje5_LD1dmCAxXrTaQEHbiRDCwQFnoECBIQAQ&url=https%3A%2F%2Ffr.linkedin.com%2Fin%2Fjean-baptiste-loirot-aba759220&usg=AOvVaw3CKXUOK_jwwQX5Tain3-kC&opi=89978449">'.img($image).'</a></td>';
+                        echo '<td scope="col"><a href="https://media.licdn.com/dms/image/D5603AQFtCdzSuCR4SQ/profile-displayphoto-shrink_200_200/0/1688379314384?e=2147483647&v=beta&t=PUou4EOU07jOQeC6Uyd3fYirTCOxfzgggUSJJQgwABI">'.img($image).'</a></td>';
                         echo '<td scope="col">' . $message['DATEHEUREMESSAGE'] . '</td>';
                         echo '<td scope="col">' . ($message['STATUTMESSAGE'] == 1 ? "En ligne" : "Hors ligne") . '</td>';
                         echo '<td scope="col">' . $message['CREATEURMESSAGE'] . '</td>';
