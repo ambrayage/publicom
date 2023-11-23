@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 <main>
   <div id="carousel-bouton-gauche">
-      <input type="image" value="" src="/images/caret-left-square-fill.svg" width="40%">
+      <input type="image" type="submit" value="" src="/images/caret-left-square-fill.svg" width="40%">
   </div>
   <div class="card">
     <?php
