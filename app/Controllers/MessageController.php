@@ -27,6 +27,7 @@ class MessageController extends BaseController
 
         $titre = $this->request->getVar('titre');
         $message = $this->request->getVar('contenu');
+        $image = $this->request->getVar('image');
         $idutilisateur = $_SESSION['IDUTILISATEUR'];
         $pseudo = $_SESSION['IDENTIFIANTUTILISATEUR'];
         $dateHeure = date('y-m-d h:i:s');

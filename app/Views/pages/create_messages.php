@@ -26,14 +26,18 @@ $this->section('content');
                 <textarea class="mt-4 form-control" aria-label="With textarea" name="contenu"></textarea>
             </div>
         </div>
+        <!-- <div class="input-group mt-4">
+            <input type="file" class="form-control" id="inputGroupFile02" name="image">
+        </div> -->
         <div class="form-check  form-switch">
-            <input class="mt-5 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" name="statut" checked>
+            <input class="mt-5 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" name="statut"
+                checked>
             <label class="mt-5 form-check-label " for="flexSwitchCheckChecked">Afficher ?</label>
         </div>
         <input class="mt-3 mb-4 w-100 btn btn-primary " type="submit" value="Ajouter">
 
     </form>
-   
+
 </div>
 
 <?= $this->endSection(); ?>

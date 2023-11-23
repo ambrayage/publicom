@@ -13,7 +13,7 @@ class VisuMessageController extends BaseController
       
         return view('/pages/visualisation_messages', [
             'listemessage' => $dataMessages,
-            'title' => 'visualtion du message'
+            'title' => 'Visualtion du message'
         ]);
     }
 }
