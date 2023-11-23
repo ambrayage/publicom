@@ -41,23 +41,43 @@
                         'class' => 'post_images',
                         'width' => '20',
                         'height' => '20',
-                    ]; 
+                    ];
                     foreach ($listeMessage as $message) {
-                    echo '<tr>
-                        <td scope="row"><input type="checkbox" name="message[]" value="'.$message['IDMESSAGE'].'"></td>';
+                        echo '<tr>
+                        <td scope="row"><input type="checkbox" name="message[]" value="' . $message['IDMESSAGE'] . '"></td>';
                         echo '<td scope="col">' . $message['TITREMESSAGE'] . '</td>';
                         echo '<td scope="col">' . $message['TEXTEMESSAGE'] . '</td>';
-                        echo '<td scope="col"><a href="https://media.licdn.com/dms/image/D5603AQFtCdzSuCR4SQ/profile-displayphoto-shrink_200_200/0/1688379314384?e=2147483647&v=beta&t=PUou4EOU07jOQeC6Uyd3fYirTCOxfzgggUSJJQgwABI">'.img($image).'</a></td>';
+                        echo '<td scope="col">  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal" aria-expanded="false" aria-controls="collapseExample">
+                        Button with data-target
+                      </button></td>';
                         echo '<td scope="col">' . $message['DATEHEUREMESSAGE'] . '</td>';
                         echo '<td scope="col">' . ($message['STATUTMESSAGE'] == 1 ? "En ligne" : "Hors ligne") . '</td>';
                         echo '<td scope="col">' . $message['CREATEURMESSAGE'] . '</td>';
                         echo '<td scope="col"><a href="' . route_to('page.modifier') . '?id=' . $message['IDMESSAGE'] . '">Modifier</a></td>';
                         echo '<td scope="col"><a href="' . route_to('historique.message') . '?id=' . $message['IDMESSAGE'] . '">Historique</a></td>
                     </tr>';
-
-                    }
-
                     ?>
+                        <div class="modal" id="modal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Aperçu de l'image</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <?php
+                                            var_dump($message['IMAGEMESSAGE']);
+                                             ?>
+                                        <img src="data:image/*;base64,'<?= base64_encode($message['IMAGEMESSAGE']) ?>'" alt="Image" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><?php
+                            }
+
+                                ?>
 
     </form>
     </tbody>

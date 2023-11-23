@@ -14,7 +14,6 @@ class MessageController extends BaseController
         return view('pages/create_messages', [
             "title" => "Ajouter un message"
         ]);
-
     }
 
     public function creation()
@@ -27,7 +26,9 @@ class MessageController extends BaseController
 
         $titre = $this->request->getVar('titre');
         $message = $this->request->getVar('contenu');
-        $image = $this->request->getVar('image');
+        if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
+            $image = file_get_contents($_FILES['image']['tmp_name']);
+        }
         $idutilisateur = $_SESSION['IDUTILISATEUR'];
         $pseudo = $_SESSION['IDENTIFIANTUTILISATEUR'];
         $dateHeure = date('y-m-d h:i:s');
@@ -41,6 +42,7 @@ class MessageController extends BaseController
             'IDUTILISATEUR' => $idutilisateur,
             'TITREMESSAGE' => $titre,
             'TEXTEMESSAGE' => $message,
+            'IMAGEMESSAGE' => $image,
             'DATEHEUREMESSAGE' => $dateHeure,
             'STATUTMESSAGE' => $statut,
             'CREATEURMESSAGE' => $pseudo
@@ -59,9 +61,6 @@ class MessageController extends BaseController
 
         $historiqModel->insert($dataHistorique);
         return redirect()->to(base_url('liste'));
-
-
-
     }
     public function liste()
     {
@@ -128,7 +127,6 @@ class MessageController extends BaseController
         $modelHistorique->insert($dataHistorique);
 
         return redirect()->to(base_url('liste'));
-
     }
 
     public function supprimerMessage()
@@ -150,7 +148,6 @@ class MessageController extends BaseController
 
             return redirect()->to(base_url('liste'))->with('error', 'Aucun message sélectionné pour la suppression.');
         }
-
     }
 
     public function historique()
@@ -159,11 +156,10 @@ class MessageController extends BaseController
         $idMessage = $_GET['id'];
         $modelUtilisateur = new userModel();
         $modelHistorique = new historiqueModel;
-        $dataHistoriques = $modelHistorique->join('utilisateur','utilisateur.IDUTILISATEUR = historique.IDUTILISATEUR')->where('IDMESSAGE', $idMessage)->orderBy('HISTORIQUEDATEHEUREMESSAGE','DESC')->findAll();
+        $dataHistoriques = $modelHistorique->join('utilisateur', 'utilisateur.IDUTILISATEUR = historique.IDUTILISATEUR')->where('IDMESSAGE', $idMessage)->orderBy('HISTORIQUEDATEHEUREMESSAGE', 'DESC')->findAll();
         return view('pages/historique_edit', [
             'dataHistorique' => $dataHistoriques,
             'title' => 'Historique des messages',
         ]);
     }
-
 }

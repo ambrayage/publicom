@@ -12,7 +12,7 @@ $this->section('content');
 
 
 <div class="container border rounded">
-    <form method="post" action="<?= url_to('creation.message'); ?>">
+    <form method="post" action="<?= url_to('creation.message'); ?>" enctype="multipart/form-data">
         <div class="text-center">
             <div class="input-group ">
                 <span class="mt-5 input-group-text" id="basic-addon1">Titre</span>
@@ -29,6 +29,7 @@ $this->section('content');
         <!-- <div class="input-group mt-4">
             <input type="file" class="form-control" id="inputGroupFile02" name="image">
         </div> -->
+        <input type="file" name="image" accept="image/*">
         <div class="form-check  form-switch">
             <input class="mt-5 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" name="statut"
                 checked>
