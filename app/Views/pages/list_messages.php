@@ -44,7 +44,7 @@
                     ];
                     foreach ($listeMessage as $message) { ?>
                         <tr>
-                            <td scope="row"><input type="checkbox" name="message[]" value="' . $message['IDMESSAGE'] . '">
+                            <td scope="row"><input type="checkbox" name="message[]" value="<?= $message['IDMESSAGE'] ?>">
                             </td>
                             <td scope="col">
                                 <?= $message['TITREMESSAGE'] ?>

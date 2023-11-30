@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\historiqueModel;
 use App\Models\messageModel;
 use App\Models\userModel;
+use CodeIgniter\Files\File;
 use PhpParser\Node\VarLikeIdentifier;
 
 class MessageController extends BaseController
