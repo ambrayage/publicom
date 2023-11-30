@@ -29,6 +29,8 @@ class MessageController extends BaseController
         if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
             $image = file_get_contents($_FILES['image']['tmp_name']);
         }
+        // var_dump($_FILES['image']);
+        // die();
         $idutilisateur = $_SESSION['IDUTILISATEUR'];
         $pseudo = $_SESSION['IDENTIFIANTUTILISATEUR'];
         $dateHeure = date('y-m-d h:i:s');
@@ -66,6 +68,8 @@ class MessageController extends BaseController
     {
         $modelMessages = new messageModel();
         $dataMessages = $modelMessages->findAll();
+        // var_dump($dataMessages);
+        // die();
         return view('pages/list_messages', [
             'listeMessage' => $dataMessages,
             "title" => "Liste des messages"
