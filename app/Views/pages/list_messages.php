@@ -42,31 +42,46 @@
                         'width' => '20',
                         'height' => '20',
                     ];
-                    foreach ($listeMessage as $message) {
-                        echo '<tr>
-                        <td scope="row"><input type="checkbox" name="message[]" value="' . $message['IDMESSAGE'] . '"></td>';
-                        echo '<td scope="col">' . $message['TITREMESSAGE'] . '</td>';
-                        echo '<td scope="col">' . $message['TEXTEMESSAGE'] . '</td>';
-                        echo '<td scope="col">  <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#modal" aria-expanded="false" aria-controls="collapseExample">
-                        <img src="images/image.svg"></img>
-                      </button></td>';
-                        echo '<td scope="col">' . $message['DATEHEUREMESSAGE'] . '</td>';
-                        echo '<td scope="col">' . ($message['STATUTMESSAGE'] == 1 ? "En ligne" : "Hors ligne") . '</td>';
-                        echo '<td scope="col">' . $message['CREATEURMESSAGE'] . '</td>';
-                        echo '<td scope="col"><a href="' . route_to('page.modifier') . '?id=' . $message['IDMESSAGE'] . '">Modifier</a></td>';
-                        echo '<td scope="col"><a href="' . route_to('historique.message') . '?id=' . $message['IDMESSAGE'] . '">Historique</a></td>
-                    </tr>';
-                        ?>
+                    foreach ($listeMessage as $message) { ?>
+                        <tr>
+                            <td scope="row"><input type="checkbox" name="message[]" value="' . $message['IDMESSAGE'] . '">
+                            </td>
+                            <td scope="col">
+                                <?= $message['TITREMESSAGE'] ?>
+                            </td>
+                            <td scope="col">
+                                <?= $message['TEXTEMESSAGE'] ?>
+                            </td>
+                            <td scope="col"> <button class="btn" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal<?= $message['IDMESSAGE'] ?>" aria-expanded="false" aria-controls="collapseExample">
+                                    <img src="images/image.svg"></img>
+                                </button></td>
+                            <td scope="col">
+                                <?= $message['DATEHEUREMESSAGE'] ?>
+                            </td>
+                            <td scope="col">
+                                <?= ($message['STATUTMESSAGE'] == 1 ? "En ligne" : "Hors ligne") ?>
+                            </td>
+                            <td scope="col">
+                                <?= $message['CREATEURMESSAGE'] ?>
+                            </td>
+                            <td scope="col"><a
+                                    href="'<?= route_to('page.modifier') . '?id=' . $message['IDMESSAGE'] ?>'">Modifier</a>
+                            </td>
+                            <td scope="col"><a
+                                    href="'<?= route_to('historique.message') . '?id=' . $message['IDMESSAGE'] ?>'">Historique</a>
+                            </td>
+                        </tr>
 
-                        <div class="modal" id="modal" tabindex="-1" role="dialog">
+                        <div class="modal" id="modal<?= $message['IDMESSAGE'] ?>" tabindex="-1" role="dialog">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title">Aperçu de l'image</h5>
                                     </div>
                                     <div class="modal-body">
-                                        <img src="data:image/*;base64,'<?= base64_encode($message['IMAGEMESSAGE']) ?>'"
-                                            alt="Image"></img>
+                                        <img src="data:image/*;base64,<?=
+                                            base64_encode($message['IMAGEMESSAGE']) ?>" alt="Image"></img>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-primary"
