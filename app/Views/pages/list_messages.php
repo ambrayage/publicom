@@ -64,8 +64,8 @@
                                     <div class="modal-header">
                                         <h5 class="modal-title">Aperçu de l'image</h5>
                                     </div>
-                                    <div class="modal-body">
-                                        <img src="data:image/*;base64,'<?= base64_encode($message['IMAGEMESSAGE']) ?>'"
+                                    <div class="modal-body text-center">
+                                        <img src="data:image/*;base64,<?= base64_encode($message['IMAGEMESSAGE'])?>"
                                             alt="Image"></img>
                                     </div>
                                     <div class="modal-footer">
