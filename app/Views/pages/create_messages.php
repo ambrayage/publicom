@@ -17,13 +17,13 @@ $this->section('content');
             <div class="input-group ">
                 <span class="mt-5 input-group-text" id="basic-addon1">Titre</span>
                 <input type="text" class="mt-5 form-control" placeholder="Titre du message" aria-label="Username"
-                    aria-describedby="basic-addon1" name="titre">
+                    aria-describedby="basic-addon1" name="titre" required>
             </div>
         </div>
         <div class="text-center">
             <div class="input-group">
                 <span class="mt-4 input-group-text">Contenu ( 160 caractères max )</span>
-                <textarea class="mt-4 form-control" aria-label="With textarea" name="contenu"></textarea>
+                <textarea class="mt-4 form-control" aria-label="With textarea" name="contenu" required></textarea>
             </div>
         </div>
         <!-- <div class="input-group mt-4">
