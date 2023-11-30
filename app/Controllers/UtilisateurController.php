@@ -29,6 +29,7 @@ class UtilisateurController extends BaseController
 
         $model->insert($data);
         return redirect()->to(base_url('ajout-utilisateur'));
+     
 
     }
 }
