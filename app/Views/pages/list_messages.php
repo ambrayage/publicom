@@ -66,10 +66,10 @@
                                 <?= $message['CREATEURMESSAGE'] ?>
                             </td>
                             <td scope="col"><a
-                                    href="'<?= route_to('page.modifier') . '?id=' . $message['IDMESSAGE'] ?>'">Modifier</a>
+                                    href="<?= route_to('page.modifier') . '?id=' . $message['IDMESSAGE'] ?>">Modifier</a>
                             </td>
                             <td scope="col"><a
-                                    href="'<?= route_to('historique.message') . '?id=' . $message['IDMESSAGE'] ?>'">Historique</a>
+                                    href="<?= route_to('historique.message') . '?id=' . $message['IDMESSAGE'] ?>">Historique</a>
                             </td>
                         </tr>
 
