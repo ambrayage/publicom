@@ -62,10 +62,11 @@
                     <li><a href="<?= route_to('page.creation') ?>"><button type="button"
                                 class="btn btn-primary me-lg-3">Créer un message</button></a></li>
                 </ul>
-                <button class="me-3 btn btn-primary">
+                <div class="me-3 btn btn-primary"
+                    title="Connecté en tant que <?= $_SESSION['IDENTIFIANTUTILISATEUR'] ?>">
                     <?= img($profiles); ?>
                     <?= $_SESSION['IDENTIFIANTUTILISATEUR'] ?>
-                </button>
+                </div>
                 <div class="text-end">
                     <form action="<?= url_to('deconnexion') ?>">
                         <button type="submit" class="btn btn-primary">Déconnexion</button>
