@@ -35,7 +35,7 @@ $this->section('content');
         </div>
         <li class="row input-group">
             <div class="col-md-8">
-                <select class="form-select mt-3" aria-label="Default select example">
+                <select name="police" class="form-select mt-3" aria-label="Default select example">
                     <option selected>Police d'écriture</option>
                     <option value="Verdana">Verdana</option>
                     <option value="Courier">Courier</option>

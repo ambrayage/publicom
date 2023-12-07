@@ -35,6 +35,20 @@ foreach ($listeModifierMessage as $modfier) {
                     value=""><?= $modfier['TEXTEMESSAGE']; ?></textarea>
             </div>
         </div>
+        <li class="row input-group">
+            <div class="col-md-8">
+                <select name="police" class="form-select mt-3" aria-label="Default select example">
+                    <option value="<?= $modfier['POLICEMESSAGE'] ?>" selected><?= $modfier['POLICEMESSAGE'] ?></option>
+                    <option value="">Police d'écriture</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Courier">Courier</option>
+                    <option value="Lucida Sans">Lucida Sans</option>
+                </select>
+            </div>
+            <div class="col-md-4 mt-3 btn h-100">
+                <input class="w-100" type="color" id="colortext" name="couleur" value="<?= $modfier['COULEURMESSAGE'] ?>"/>
+            </div>
+        </li>
         <div class="form-check  form-switch">
             <input class="mt-5 form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" name="statut"
                 <?= ($modfier['STATUTMESSAGE'] == 1 ? 'checked' : ''); ?>> <label class="mt-5 form-check-label "

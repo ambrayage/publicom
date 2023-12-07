@@ -27,6 +27,9 @@ class MessageController extends BaseController
 
         $titre = $this->request->getVar('titre');
         $message = $this->request->getVar('contenu');
+        $police = $this->request->getVar('police');
+        $couleur = $this->request->getVar('colortext');
+
         if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
             $image = file_get_contents($_FILES['image']['tmp_name']);
         }
@@ -43,6 +46,8 @@ class MessageController extends BaseController
             'IDUTILISATEUR' => $idutilisateur,
             'TITREMESSAGE' => $titre,
             'TEXTEMESSAGE' => $message,
+            'POLICEMESSAGE' => $police,
+            'COULEURMESSAGE' => $couleur,
             'IMAGEMESSAGE' => $image,
             'DATEHEUREMESSAGE' => $dateHeure,
             'STATUTMESSAGE' => $statut,
@@ -57,6 +62,8 @@ class MessageController extends BaseController
             'IDUTILISATEUR' => $idutilisateur,
             'HISTORIQUETITREMESSAGE' => $titre,
             'HISTORIQUETEXTEMESSAGE' => $message,
+            'HISTORIQUEPOLICEMESSAGE' => $police,
+            'HISTORIQUECOULEURMESSAGE' => $couleur,
             'HISTORIQUEDATEHEUREMESSAGE' => $dateHeure
         ];
 
@@ -102,6 +109,8 @@ class MessageController extends BaseController
         $idMessage = $_GET['id'];
         $titreModifier = $this->request->getVar('titre');
         $contenuModifier = $this->request->getVar('contenu');
+        $police = $this->request->getVar('police');
+        $couleur = $this->request->getVar('couleur');
 
         if ($statut = $this->request->getVar('statut')) {
             $statut = 1;
@@ -116,12 +125,16 @@ class MessageController extends BaseController
             'IDUTILISATEUR' => $idutilisateur,
             'HISTORIQUETITREMESSAGE' => $dataHistoriqueMessage['TITREMESSAGE'],
             'HISTORIQUETEXTEMESSAGE' => $dataHistoriqueMessage['TEXTEMESSAGE'],
+            'HISTORIQUEPOLICEMESSAGE' => $police,
+            'HISTORIQUECOULEURMESSAGE' => $couleur,
             'HISTORIQUEDATEHEUREMESSAGE' => $dataHistoriqueMessage['DATEHEUREMESSAGE']
         ];
 
         $data = [
             'TITREMESSAGE' => $titreModifier,
             'TEXTEMESSAGE' => $contenuModifier,
+            'POLICEMESSAGE' => $police,
+            'COULEURMESSAGE' => $couleur,
             'DATEHEUREMESSAGE' => $dateHeure,
             'STATUTMESSAGE' => $statut
         ];

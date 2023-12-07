@@ -49,7 +49,7 @@
                             <td scope="col">
                                 <?= $message['TITREMESSAGE'] ?>
                             </td>
-                            <td scope="col">
+                            <td scope="col" style="font-family: <?= $message['POLICEMESSAGE']?>; color: <?= $message['COULEURMESSAGE'] ?>">
                                 <?= $message['TEXTEMESSAGE'] ?>
                             </td>
                             <td scope="col"> <button class="btn" type="button" data-bs-toggle="modal"

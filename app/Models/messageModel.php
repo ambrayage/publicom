@@ -10,6 +10,6 @@ class messageModel extends Model
     protected $returnType     = 'array'; // 'object'
     protected $useSoftDeletes = false; // true => delete_at ...
 
-    protected $allowedFields = ['IDMESSAGE','IDUTILISATEUR', 'TITREMESSAGE','TEXTEMESSAGE','IMAGEMESSAGE', 'DATEHEUREMESSAGE', 'STATUTMESSAGE', 'CREATEURMESSAGE'];
+    protected $allowedFields = ['IDMESSAGE','IDUTILISATEUR', 'TITREMESSAGE','TEXTEMESSAGE','POLICEMESSAGE', 'COULEURMESSAGE' ,'IMAGEMESSAGE', 'DATEHEUREMESSAGE', 'STATUTMESSAGE', 'CREATEURMESSAGE'];
 
 }

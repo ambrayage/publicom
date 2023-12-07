@@ -16,6 +16,8 @@ $this->section('content');
             <tr>
                 <th scope="col">Dernier titre</th>
                 <th scope="col">Dernier message</th>
+                <th scope="col">Dernière police</th>
+                <th scope="col">Dernière couleur</th>
                 <th scope="col">Date de la dernière modification</th>
                 <th scope="col">Modifié par</th>
 
@@ -24,18 +26,32 @@ $this->section('content');
         <tbody>
             <?php
 
-            foreach ($dataHistorique as $element) {
+            foreach ($dataHistorique as $element) { ?>
 
 
 
-                echo '<tr><td scope="col">' . $element['HISTORIQUETITREMESSAGE'] . '</td>';
-                echo '<td scope="col">' . $element['HISTORIQUETEXTEMESSAGE'] . '</td>';
-                echo '<td scope="col">' . $element['HISTORIQUEDATEHEUREMESSAGE'] . '</td>';
-                echo '<td scope="col">' . $element['IDENTIFIANTUTILISATEUR'] . '</td></tr>';
-            }
+                <tr>
+                    <td scope="col">
+                        <?= $element['HISTORIQUETITREMESSAGE'] ?>
+                    </td>
+                    <td scope="col" style="font-family: <?= $element['HISTORIQUEPOLICEMESSAGE'] ?>; color: <?= $element['HISTORIQUECOULEURMESSAGE'] ?>;">
+                        <?= $element['HISTORIQUETEXTEMESSAGE'] ?>
+                    </td>
+                    <td scope="col">
+                        <?= $element['HISTORIQUEPOLICEMESSAGE'] ?>
+                    </td>
+                    <td scope="col">
+                        <input type="color" disabled value="<?= $element['HISTORIQUECOULEURMESSAGE'] ?>">
+                    </td>
+                    <td scope="col">
+                        <?= $element['HISTORIQUEDATEHEUREMESSAGE'] ?>
+                    </td>
+                    <td scope="col">
+                        <?= $element['IDENTIFIANTUTILISATEUR'] ?>
+                    </td>
+                </tr>
+            <?php } ?>
 
-
-            ?>
         </tbody>
     </table>
 </div>
