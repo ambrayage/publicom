@@ -6,7 +6,7 @@
       <a href="<?= route_to('visu') . '?id=' . $msgPrec['IDMESSAGE'] ?>"><input type="image" type="submit" value="" src="/images/caret-left-square-fill.svg" width="40%"></a>
     </div>
   <?php } ?>
-  <div style="background-image: url(data:image/*;base64,<?= base64_encode($msgActu['IMAGEMESSAGE'])?>);" class="card">
+  <div style="background-image: url(data:image/*;base64,<?= base64_encode($msgActu['IMAGEMESSAGE'])?>); background-size: cover;" class="card">
     <p style="font-family: <?= $msgActu['POLICEMESSAGE'] ?>; color: <?=  $msgActu['COULEURMESSAGE'] ?>;"><?= $msgActu["TEXTEMESSAGE"] ?></p>
   </div>
 
