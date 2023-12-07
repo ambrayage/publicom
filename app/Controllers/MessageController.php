@@ -139,11 +139,14 @@ class MessageController extends BaseController
 
         if (!empty($messagesASupprimer)) {
             $messageModel = new messageModel();
+            $messageHistorique = new historiqueModel();
 
 
             foreach ($messagesASupprimer as $messagesSuppr) {
                 $messageModel->delete($messagesSuppr);
+                // $messageHistorique->where(['IDMESSAGE'=> $messagesSuppr])->delete();
             }
+
 
 
             return redirect()->to(base_url('liste'))->with('success', 'Les messages sélectionnés ont été supprimés avec succès.');
