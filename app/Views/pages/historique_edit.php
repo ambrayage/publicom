@@ -31,10 +31,11 @@ $this->section('content');
 
 
                 <tr>
-                    <td scope="col">
+                    <td class="text-break" scope="col">
                         <?= $element['HISTORIQUETITREMESSAGE'] ?>
                     </td>
-                    <td scope="col" style="font-family: <?= $element['HISTORIQUEPOLICEMESSAGE'] ?>; color: <?= $element['HISTORIQUECOULEURMESSAGE'] ?>;">
+                    <td class="text-break" scope="col"
+                        style="font-family: <?= $element['HISTORIQUEPOLICEMESSAGE'] ?>; color: <?= $element['HISTORIQUECOULEURMESSAGE'] ?>;">
                         <?= $element['HISTORIQUETEXTEMESSAGE'] ?>
                     </td>
                     <td scope="col">

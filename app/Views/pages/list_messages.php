@@ -46,14 +46,16 @@
                         <tr>
                             <td scope="row"><input type="checkbox" name="message[]" value="<?= $message['IDMESSAGE'] ?>">
                             </td>
-                            <td scope="col">
+                            <td class="text-break" scope="col">
                                 <?= $message['TITREMESSAGE'] ?>
                             </td>
-                            <td scope="col" style="font-family: <?= $message['POLICEMESSAGE']?>; color: <?= $message['COULEURMESSAGE'] ?>">
+                            <td class="text-break" scope="col"
+                                style="font-family: <?= $message['POLICEMESSAGE'] ?>; color: <?= $message['COULEURMESSAGE'] ?>">
                                 <?= $message['TEXTEMESSAGE'] ?>
                             </td>
                             <td scope="col"> <button class="btn" type="button" data-bs-toggle="modal"
-                                    data-bs-target="#modal<?= $message['IDMESSAGE'] ?>" aria-expanded="false" aria-controls="collapseExample">
+                                    data-bs-target="#modal<?= $message['IDMESSAGE'] ?>" aria-expanded="false"
+                                    aria-controls="collapseExample">
                                     <img src="images/image.svg"></img>
                                 </button></td>
                             <td scope="col">
