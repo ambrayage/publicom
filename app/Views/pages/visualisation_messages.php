@@ -1,29 +1,24 @@
 <?= $this->extend('layout_hf') ?>
 <?= $this->section('content') ?>
 <main>
-  <div id="carousel-bouton-gauche">
-      <input type="image" type="submit" value="" src="/images/caret-left-square-fill.svg" width="40%">
-  </div>
+  <?php if ($msgPrec !== null) { ?>
+    <div id="carousel-bouton-gauche">
+      <a href="<?= route_to('visu') . '?id=' . $msgPrec['IDMESSAGE'] ?>"><input type="image" type="submit" value="" src="/images/caret-left-square-fill.svg" width="40%"></a>
+    </div>
+  <?php } ?>
   <div class="card">
-    <?php
-    foreach ($listemessage as $message) {
-      echo '<p>' . $message['TEXTEMESSAGE'] . '</p>';
-    }
-    ?>
+    <p><?= $msgActu["TEXTEMESSAGE"] ?></p>
   </div>
-  <div id="carousel-bouton-droite">
-    <input type="image" value="" src="/images/caret-right-square-fill.svg" width="40%">
-  </div>
+
+  <?php if ($msgSuiv !== null) { ?>
+    <div id="carousel-bouton-droite">
+      <a href="<?= route_to('visu') . '?id=' . $msgSuiv['IDMESSAGE'] ?>"><input type="image" value="" src="/images/caret-right-square-fill.svg" width="40%"></a>
+
+    </div>
+  <?php } ?>
+
 
 </main>
-
-<script>
-  $.ajax({
-    type: 'GET',
-    headers: {'X-Requested-With':'XMLHttpRequest'},
-    url: 'VisuMessageController.php'
-  })
-</script>
 
 
 <?= $this->endSection() ?>
