@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
-    
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Publicom | <?= $title ?></title>
+    <title>Publicom |
+        <?= $title ?>
+    </title>
     <link rel="shortcut icon" href="images/logo_publicom.png" type="image/x-icon">
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -52,10 +54,13 @@
                 <ul class="mb-3 nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
                     <div class="rounded-start">
-                        <li><a href="<?= route_to('visualisation.message') ?>"><button type="button" class="rounded-start btn btn-primary me-lg-3 ">Visualiser messages</button></a></li>
+                        <li><a href="<?= route_to('visualisation.message') ?>"><button type="button"
+                                    class="rounded-start btn btn-primary me-lg-3 ">Visualiser messages</button></a></li>
                     </div>
-                    <li><a href="<?= route_to('liste.message') ?>"><button type="button" class="btn btn-primary me-lg-3">Liste des messages d'information</button></a></li>
-                    <li><a href="<?= route_to('page.creation') ?>"><button type="button" class="btn btn-primary me-lg-3">Créer un message</button></a></li>
+                    <li><a href="<?= route_to('liste.message') ?>"><button type="button"
+                                class="btn btn-primary me-lg-3">Liste des messages d'information</button></a></li>
+                    <li><a href="<?= route_to('page.creation') ?>"><button type="button"
+                                class="btn btn-primary me-lg-3">Créer un message</button></a></li>
                 </ul>
                 <button class="me-3 btn btn-primary">
                     <?= img($profiles); ?>
@@ -72,17 +77,20 @@
 
     <?= $this->renderSection('content') ?>
 
-    <footer class="bg-dark text-white d-flex flex-wrap justify-content-between align-items-center py-3 my-4 mb-auto border-top">
+    <footer
+        class="bg-dark text-white d-flex flex-wrap justify-content-between align-items-center py-3 my-4 mb-auto border-top">
         <p class="col-md-4 mb-0 text-white container">&copy; 2023 Company, Inc</p>
 
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none container">
+        <a href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none container">
             <svg class="bi me-2" width="40" height="32">
                 <use xlink:href="#bootstrap" />
             </svg>
         </a>
 
         <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="<?= route_to('liste.message') ?>" class="nav-link px-2 text-white">Accueil</a></li>
+            <li class="nav-item"><a href="<?= route_to('liste.message') ?>" class="nav-link px-2 text-white">Accueil</a>
+            </li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Conditions d'utilisation</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Politique de confidentialité</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-white">À propos</a></li>
