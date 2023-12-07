@@ -14,6 +14,7 @@ class VisuMessageController extends BaseController
         $id = $this->request->getVar("id") ?? 0;
 
         $dataMessagesActu = ($id == 0 ? $messageModel->where('STATUTMESSAGE', 1)->first() : $messageModel->where('IDMESSAGE', $id)->first());
+        $id = ($id == 0 ? $dataMessagesActu["IDMESSAGE"] : $id);
         $dataMessagePrec = $messageModel->where('STATUTMESSAGE', 1)->where("IDMESSAGE <", $id)->orderBy("IDMESSAGE", "DESC")->first();
         $dataMessageSuiv = $messageModel->where('STATUTMESSAGE', 1)->where("IDMESSAGE >", $id)->orderBy("IDMESSAGE", "ASC")->first();
 

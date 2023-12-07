@@ -31,7 +31,7 @@ $this->section('content');
             <input type="file" class="form-control" id="inputGroupFile02" name="image">
         </div> -->
         <div class="mb-3 mt-4">
-            <input class="form-control" type="file" name="image" id="formFile" accept="image/*">
+            <input class="form-control" type="file" name="image" id="formFile" accept="image/*" required>
         </div>
         <li class="row input-group">
             <div class="col-md-8">
