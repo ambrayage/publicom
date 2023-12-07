@@ -7,7 +7,6 @@
     </div>
   <?php } ?>
   <div style="background-image: url(data:image/*;base64,<?= base64_encode($msgActu['IMAGEMESSAGE'])?>);" class="card">
-  <div style="  background-image: url(<?= base64_encode($msgActu['IMAGEMESSAGE'])?>;" class="card">
     <p style="font-family: <?= $msgActu['POLICEMESSAGE'] ?>; color: <?=  $msgActu['COULEURMESSAGE'] ?>;"><?= $msgActu["TEXTEMESSAGE"] ?></p>
   </div>
 
