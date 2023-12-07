@@ -13,7 +13,7 @@
 <div class="container">
     <form method="post" action="<?= route_to('supprimer.message') ?>">
         <div class="mb-4">
-            <button type="submit" class="btn btn-primary">Supprimer des messages</button>
+            <button type="submit" class="btn btn-danger opacity-100 shadow-lg">Supprimer des messages</button>
         </div>
         <table class=" table text-center">
             <thead>
