@@ -12,6 +12,7 @@ $routes->get('/', 'Home::index', ['as' => 'page.connexion',]);
 $routes->post('/connexion', 'LoginController::signIn', ['as' => 'connexion']);
 $routes->get('/deconnexion', 'LoginController::signOut', ['as' => 'deconnexion']);
 
+$routes->get('/visumessagepass','VisuMessageController::get_msg');
 
 $routes->get('/ajout-utilisateur', 'UtilisateurController::view', ['as' => 'ajout.utilisateur'] );
 $routes->post('/ajouter-utilisateur', 'UtilisateurController::ajouterUtilisateur', ['as' => 'ajouter.utilisateur']);
