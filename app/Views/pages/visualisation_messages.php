@@ -17,5 +17,13 @@
 
 </main>
 
+<script>
+  $.ajax({
+    type: 'GET',
+    headers: {'X-Requested-With':'XMLHttpRequest'},
+    url: 'VisuMessageController.php'
+  })
+</script>
+
 
 <?= $this->endSection() ?>

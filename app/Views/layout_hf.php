@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/visu.css">
     <!-- javascript -->
     <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/jquery.js"></script>
 
 </head>
 
