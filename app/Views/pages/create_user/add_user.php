@@ -40,7 +40,8 @@
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label">Prénom</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" name="firstName" required>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value=""
+                                name="firstName" required>
                             <div class="invalid-feedback">
                                 Prénom requis.
                             </div>
@@ -48,60 +49,39 @@
 
                         <div class="col-sm-6">
                             <label for="lastName" class="form-label">Nom</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" value="" name="lastName" required>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value=""
+                                name="lastName" required>
                             <div class="invalid-feedback">
                                 Nom requis.
                             </div>
                         </div>
 
 
-
-                        <!-- <div class="modal" id="modal" tabindex="-1">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Nom d'utilisateur</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-
-                                        <div class="col-12">
-                                            <div class="input-group has-validation">
-                                                <span class="input-group-text">@</span>
-                                                <input type="text" class="form-control" id="username"
-                                                    placeholder="Nom d'utilisateur" required>
-                                                <div class="invalid-feedback">
-                                                    Nom d'utilisateur requis.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Annuler</button>
-                                        <button type="button" class="btn btn-primary">Valider</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-
-
-                        <!-- <div class="col-sm-12">
-                            <button class="w-100 btn btn-secondary btn-lg" type="submit" data-bs-toggle="modal"
-                                data-bs-target="#modal">Ajouter un nom d'utilisateur personnalisé</button>
-                        </div> -->
-
-
                         <div class="col-sm-12">
                             <label for="lastName" class="form-label">Mot de passe</label>
-                            <input type="password" class="form-control" id="password" placeholder="Mot de passe" value="" name="password"
-                                required>
+                            <input type="password" class="form-control" id="password" placeholder="Mot de passe"
+                                value="" name="password" required>
                             <div class="invalid-feedback">
                                 Mot de passe requis.
                             </div>
                         </div>
+
+
+
+
+                        <?php
+                       $erreur = session('erreur');
+                       $success = session('success');
+                       if ($erreur) {
+                        foreach ($erreur as $mess){
+                            echo '<div class="alert alert-danger">' . esc($mess) . '</div>';
+                        }
+                       } elseif ($success) {
+                           echo '<div class="alert alert-success">' . esc($success) . '</div>';
+                       }
+                       ?>
+
+
 
                         <hr class="my-4">
 

@@ -45,6 +45,15 @@
     
             <button class="btn btn-primary w-100 py-2" type="submit">Se connecter</button>
         </form>
+
+        <?php
+
+        $msg = session('msg');
+        if($msg){
+            echo '<br><div class="alert alert-danger">' . esc($msg) . '</div>';
+        }
+
+        ?>
     </main>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 

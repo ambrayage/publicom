@@ -156,8 +156,9 @@ class MessageController extends BaseController
 
 
             foreach ($messagesASupprimer as $messagesSuppr) {
+                $messageHistorique->where(['IDMESSAGE'=> $messagesSuppr])->delete();
                 $messageModel->delete($messagesSuppr);
-                // $messageHistorique->where(['IDMESSAGE'=> $messagesSuppr])->delete();
+                
             }
 
 
