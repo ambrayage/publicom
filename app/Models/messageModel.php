@@ -12,4 +12,9 @@ class messageModel extends Model
 
     protected $allowedFields = ['IDMESSAGE','IDUTILISATEUR', 'TITREMESSAGE','TEXTEMESSAGE','POLICEMESSAGE', 'COULEURMESSAGE' ,'IMAGEMESSAGE', 'DATEHEUREMESSAGE', 'STATUTMESSAGE', 'CREATEURMESSAGE'];
 
+
+    public function messageExiste() {
+
+        return $this->where('STATUTMESSAGE', 1)->countAllResults() > 0;
+    }
 }

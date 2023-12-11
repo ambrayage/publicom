@@ -41,7 +41,14 @@
                 'class' => 'post_images',
                 'width' => '20',
                 'height' => '20',
-            ]; ?>
+            ];
+
+            $model = new App\Models\messageModel();
+
+
+
+
+            ?>
 
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <?= img($imageProperties); ?>
@@ -54,8 +61,10 @@
                 <ul class="mb-3 nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
                     <div class="rounded-start">
-                        <li><a href="<?= route_to('visualisation.message') ?>"><button type="button"
-                                    class="rounded-start btn btn-primary me-lg-3 ">Visualiser messages</button></a></li>
+                        <li><a <?= ($model->messageExiste() ? ("href='" . route_to("visualisation.message") . "'") : "") ?>><button type="button" class="rounded-start btn btn-primary me-lg-3 " <?= $model->messageExiste() ? "" : "disabled" ?>>Visualiser messages</button></a>
+                        </li>
+
+
                     </div>
                     <li><a href="<?= route_to('liste.message') ?>"><button type="button"
                                 class="btn btn-primary me-lg-3">Liste des messages d'information</button></a></li>
