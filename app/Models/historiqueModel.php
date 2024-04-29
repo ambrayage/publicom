@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class historiqueModel extends Model
 {
-    protected $table      = 'historique';
+    protected $table      = 'HISTORIQUE';
     protected $primaryKey = 'IDHISTORIQUE';
     protected $returnType     = 'array'; // 'object'
     protected $useSoftDeletes = false; // true => delete_at ...

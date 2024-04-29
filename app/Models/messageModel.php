@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class messageModel extends Model
 {
-    protected $table      = 'message';
+    protected $table      = 'MESSAGE';
     protected $primaryKey = 'IDMESSAGE';
 
     protected $returnType     = 'array'; // 'object'
